@@ -23,7 +23,7 @@ import java.util.*
 rule "Is driver license valid"
 when            
     $driver: /driver[licenseExpiration.after(currentTime)]
-    NameQuery($driver,$nam)
+    NameQuery($driver,$nam;)
 then
     System.out.println($nam);
     $driver.setValidLicense(true);
